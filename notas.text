@@ -1,0 +1,65 @@
+OBS: CÓDIGOS DESCARTADOS QUE NÃO DERAM CERTO
+
+    //Sequência lógica para executar a movimentação do pássaro na tela
+        if (passarinho.x === 100 && passarinho.y <= 500){
+            passarinho.setFlip(false, false);
+            passarinho.ida = true;
+            passarinho.sobe = true;
+        } //Estabele o ponto de partida do pássaro e o espelhamento da imagem
+
+        if ((passarinho.x < 700 && passarinho.ida === true) && (passarinho.y > 200 && passarinho.sobe === true)){
+            console.log("Como o Passarinho ainda não chegou na borda do cenário ele continuará voando mais 5px até chegar no destino final.");
+            passarinho.x += 5;
+            passarinho.y -= 5;
+        } // Define o ponto de parada da ida, e incrementa 5px na posição x do pássaro
+
+        if (passarinho.x == 700 && passarinho.y == 200){
+            passarinho.setFlip(true, false);
+            passarinho.ida = false;
+            passarinho.sobe = false;
+        } // Estabelece o ponto de volta do pássaro e o espelhamento horizontal do pássaro
+
+        if ((passarinho.x > 100 && passarinho.ida === false) && (passarinho.y < 500 && passarinho.sobe == false)){
+            console.log("Para determinar a volta do passarinho, ele precisa estar de volta a origem, então será diminuído 5px até que ele chegue a 100 px");
+            passarinho.x -= 5;
+            passarinho.y += 5;
+        } // Determina o ponto de parada da volta, e diminui 5px da posição x do pássaro até ele chegar a 100px
+    
+    if (passarinho.x === 100){
+    passarinho.setFlip(false, false);
+    passarinho.ida = true;
+} //Estabele o ponto de partida do pássaro e o espelhamento da imagem
+
+if (passarinho.x < 700 && passarinho.ida === true){
+    console.log("Como o Passarinho ainda não chegou na borda do cenário ele continuará voando mais 5px até chegar no destino final.");
+    passarinho.x += 5;
+} // Define o ponto de parada da ida, e incrementa 5px na posição x do pássaro
+
+if (passarinho.x === 700){
+    passarinho.setFlip(true, false);
+    passarinho.ida = false;
+} // Estabelece o ponto de volta do pássaro e o espelhamento horizontal do pássaro
+
+if (passarinho.x > 100 && passarinho.ida === false){
+    console.log("Para determinar a volta do passarinho, ele precisa estar de volta a origem, então será diminuído 5px até que ele chegue a 100 px");
+    passarinho.x -= 5;
+} // Determina o ponto de parada da volta, e diminui 5px da posição x do pássaro até ele chegar a 100px
+
+// -----------------------------------------------------------------------------------------------
+if (Math.abs(passarinho.y - 500) <= 5){
+    passarinho.setFlip(false, false);
+    passarinho.sobe = true;
+} 
+
+if (passarinho.y < 150 && passarinho.sobe === true){
+    passarinho.y += 5;
+}
+
+if (Math.abs(passarinho.y - 150) <= 5){
+    passarinho.setFlip(true, false);
+    passarinho.sobe = false;
+} 
+
+if (passarinho.y > 500 && passarinho.sobe === false){
+    passarinho.y -= 5;
+}
